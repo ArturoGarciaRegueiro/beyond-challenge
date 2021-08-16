@@ -2,4 +2,4 @@
 
 # Run
 
-Use command ´npm start´ to run thee server.
+Use command `npm start` to run thee server.
