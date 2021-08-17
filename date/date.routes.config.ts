@@ -1,4 +1,5 @@
 import {CommonRoutesConfig} from '../common/common.routes.config';
+import DateController from './controller/date.controller';
 import express from 'express';
 
 export class DateRoutes extends CommonRoutesConfig {
@@ -10,9 +11,7 @@ export class DateRoutes extends CommonRoutesConfig {
         this.app.get('/date', (req: express.Request, res: express.Response) => {
                 res.status(200).send('Hello world');
             })
-        this.app.post('/date', (req: express.Request, res: express.Response) => {
-                res.status(200).send('Get the difference')
-            })
+        this.app.post('/date', DateController.calculateDifference);
         return this.app;
     }
 }

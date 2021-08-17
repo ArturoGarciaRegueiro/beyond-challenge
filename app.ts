@@ -33,7 +33,7 @@ if (!process.env.DEBUG){
 }
 
 app.use(expressWinston.logger(loggerOptions));
-
+app.use(express.json());
 //add routes
 routes.push(new DateRoutes(app));
 
@@ -42,6 +42,7 @@ const runningMessage = `Server running at http://localhost:${port}`;
 app.get('/', (req:express.Request, res: express.Response) => {
     res.status(200).send(runningMessage);
 });
+
 
 server.listen(port, () => {
     routes.forEach((route: CommonRoutesConfig) => { 
